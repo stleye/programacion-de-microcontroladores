@@ -53,3 +53,10 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Configuracion local del IDE (se regenera al indexar, distinta por maquina)
+**/.settings/language.settings.xml
+**/.settings/*.sfrview.prefs
+
+# Configuraciones de debug locales (rutas absolutas por maquina)
+*.launch
