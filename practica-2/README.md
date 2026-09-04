@@ -69,8 +69,8 @@ Utilizar un vector o arreglo para definir el patrón y cambiar los tiempos de pa
 
 **¿Cuán reutilizable es el código implementado?**
 
->
+> El delay no bloqueante es reutilizable, idealmente moverlo a otro archivo.
 
 **¿Cuán sencillo resulta en su implementación cambiar el patrón de tiempos de parpadeo?**
 
->
+> Es relativamente simple cambiando el array de tiempos de encendidos y apagados
