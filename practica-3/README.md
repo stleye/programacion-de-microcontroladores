@@ -65,16 +65,16 @@ Utilizar esta función en el código implementado para el punto 2 para verificar
 
 **¿Es suficientemente clara la consigna 2 o da lugar a implementaciones con distinto comportamiento?**
 
->
+> Sí, creo que la consigna es suficientemente clara, quizas si uno no entiende lo que es duty de 50% da lugar a ambiguedad, pero sabiendo eso no veo ambiguedades.
 
 **¿Se puede cambiar el tiempo de encendido del led fácilmente en un solo lugar del código o éste está hardcodeado? ¿Hay números "mágicos" en el código?**
 
->
+> Los tiempos están definidos en un sólo lugar y no hay números mágicos hardcodeado.
 
 **¿Qué bibliotecas estándar se debieron agregar a `API_delay.h` para que el código compile? Si las funcionalidades de una API propia crecieran, ¿cuál sería el mejor lugar para incluir esas bibliotecas y algunos typedefs que se usen en la implementación?**
 
->
+> se agregaron stdint.h, stdbool.h y stm32f4xx_hal.h que ya estaba de la práctica 2 y se agregó stddef.h y assert.h. En caso de que la API creciera se pueden agregar en API_Delay.h
 
 **¿Es adecuado el control de los parámetros pasados por el usuario que se hace en las funciones implementadas? ¿Se controla que sean valores válidos? ¿Se controla que estén dentro de los rangos esperados?**
 
->
+> Sí, se controla, valores válidos pero no rangos.
