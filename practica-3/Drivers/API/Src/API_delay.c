@@ -1,4 +1,5 @@
 #include "API_delay.h"
+#include <assert.h>
 
 /**
  * @brief  Indica si el tiempo del delay ya se cumplio
@@ -16,9 +17,7 @@ static bool_t hasElapsed(delay_t *delay) {
  * @retval None
  */
 void delayInit(delay_t *delay, tick_t duration) {
-	if (delay == NULL || duration == 0) {
-		return;
-	}
+	assert(delay != NULL && duration > 0);
 	delay->duration = duration;
 	delay->running = false;
 	delay->startTime = HAL_GetTick();
@@ -30,9 +29,7 @@ void delayInit(delay_t *delay, tick_t duration) {
  * @retval bool_t
  */
 bool_t delayRead(delay_t *delay) {
-	if (delay == NULL) {
-		return false;
-	}
+	assert(delay != NULL);
 	if (delay->running) {
 		if (hasElapsed(delay)) {
 			delay->running = false;
@@ -52,9 +49,7 @@ bool_t delayRead(delay_t *delay) {
  * @retval None
  */
 void delayWrite(delay_t *delay, tick_t duration) {
-	if (delay == NULL || duration == 0) {
-		return;
-	}
+	assert(delay != NULL && duration > 0);
 	delay->duration = duration;
 }
 
@@ -64,8 +59,6 @@ void delayWrite(delay_t *delay, tick_t duration) {
  * @retval bool_t
  */
 bool_t delayIsRunning(delay_t *delay) {
-	if (delay == NULL) {
-		return false;
-	}
+	assert(delay != NULL);
 	return delay->running;
 }
