@@ -94,10 +94,10 @@ int main(void)
 	delay_t delay;
 
 	const tick_t durations[] = {
-		500, 500,
-		100, 100,
-		100, 100,
-		1000, 1000
+		500, 500,   // 500 ms prendido, 500 ms apagado (1 segundo en total con ciclo de trabajo de 50%)
+		100, 100,   // 100 ms prendido, 100 ms apagado (200 ms en total con ciclo de trabajo de 50%)
+		100, 100,   // 100 ms prendido, 100 ms apagado (200 ms en total con ciclo de trabajo de 50%)
+		1000, 1000  // 1000 ms prendido, 1000 ms apagado (2 segundos en total con ciclo de trabajo de 50%)
 	};
 
 	const uint32_t arraySize = sizeof(durations)  / sizeof(durations[0]);
