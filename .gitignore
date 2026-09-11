@@ -1,6 +1,10 @@
 .metadata/
 **/Debug/
 
+# Librerias de ST regeneradas por STM32CubeMX a partir del .ioc (identicas entre proyectos, inflan el repo)
+**/Drivers/CMSIS/
+**/Drivers/STM32F4xx_HAL_Driver/
+
 # Prerequisites
 *.d
 
