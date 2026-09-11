@@ -11,7 +11,7 @@ static bool_t hasElapsed(delay_t *delay) {
 
 /**
  * @brief  Inicializa un delay con la duracion especificada en milisegundos
- * @param  delay_t: estructura a inicializar
+ * @param  delay: estructura a inicializar
  * @param  duration: duración del delay
  * @retval None
  */
@@ -26,7 +26,7 @@ void delayInit(delay_t *delay, tick_t duration) {
 
 /**
  * @brief  Actualiza el estado del delay y retorna si ha finalizado.
- * @param  delay_t: estructura que contiene información del delay (duración, running, etc)
+ * @param  delay: estructura que contiene información del delay (duración, running, etc)
  * @retval bool_t
  */
 bool_t delayRead(delay_t *delay) {
@@ -47,7 +47,7 @@ bool_t delayRead(delay_t *delay) {
 
 /**
  * @brief  Actualiza la duración del delay.
- * @param  delay_t: delay a modificar
+ * @param  delay: delay a modificar
  * @param  duration: nueva duración del delay
  * @retval None
  */
@@ -60,6 +60,7 @@ void delayWrite(delay_t *delay, tick_t duration) {
 
 /**
  * @brief  Devuelve una copia del valor del campo running de la estructura delay_t
+ * @param  delay: delay a consultar
  * @retval bool_t
  */
 bool_t delayIsRunning(delay_t *delay) {
