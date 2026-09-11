@@ -94,10 +94,10 @@ int main(void)
 	delay_t delay;
 
 	const tick_t durations[] = {
-		250, 250,
-		50, 50,
-		50, 50,
-		500, 500
+		500, 500,
+		100, 100,
+		100, 100,
+		1000, 1000
 	};
 
 	const uint32_t arraySize = sizeof(durations)  / sizeof(durations[0]);
