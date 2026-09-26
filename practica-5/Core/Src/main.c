@@ -18,7 +18,6 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "API_delay.h"
 #include "API_debounce.h"
 #include "API_uart.h"
 #include "API_cmdparser.h"
@@ -91,13 +90,6 @@ int main(void) {
 
 	debounceFSM_init();
 
-	const tick_t durations[] = { 100, 500 };
-	const uint32_t arraySize = sizeof(durations) / sizeof(durations[0]);
-	uint32_t durationsIndex = 0;
-
-	delay_t ledDelay;
-	delayInit(&ledDelay, durations[0]);
-
 	if (!uartInit()) {
 		Error_Handler();
 	}
@@ -114,19 +106,7 @@ int main(void) {
 		/* USER CODE BEGIN 3 */
 
 		debounceFSM_update();
-		//uartCmdParserFSM_update();
 		cmdPoll();
-
-
-		if (readKey()) {
-			durationsIndex = (durationsIndex + 1) % arraySize;
-			delayWrite(&ledDelay, durations[durationsIndex]);
-		}
-
-		if (delayRead(&ledDelay)) {
-			HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-		}
-
 	}
 	/* USER CODE END 3 */
 }

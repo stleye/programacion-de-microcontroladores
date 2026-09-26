@@ -12,13 +12,8 @@
 #define CMD_MAX_TOKENS  3
 
 typedef enum {
-	CMD_OK = 0,
-	CMD_ERR_OFERFLOW,
-	CMD_ERR_SYNTAX,
-	CMD_ERR_UNKNOWN,
-	CMD_ERR_ARG
+	CMD_OK = 0, CMD_ERR_OVERFLOW, CMD_ERR_SYNTAX, CMD_ERR_UNKNOWN, CMD_ERR_ARG
 } cmd_status_t;
-
 /**
  * @brief Inicializa el módulo parser de comandos
  */
@@ -34,7 +29,5 @@ void cmdPoll(void);
  * @brief Imprime por UART la lista de comandos disponibles
  */
 void cmdPrintHelp(void);
-
-void uartCmdParserFSM_update();
 
 #endif /* API_INC_API_CMDPARSER_H_ */
